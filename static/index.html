@@ -66,6 +66,9 @@
               <button onclick="IncreaseVolumeSpecificSpeaker()" class="btn btn-info btn-lg pull-right"><i class="fa fa-volume-up"></i></button>
               <button onclick="DecreaseVolumeSpecificSpeaker()" class="btn btn-info btn-lg pull-right"><i class="fa fa-volume-down"></i></button>
               <button onclick="MuteSpecificSpeaker()" class="btn btn-info btn-lg pull-right"><i class="fa fa-volume-off"></i></button>
+            </form>
+            <br><br><br><br>
+            <p id="nowPlaying"></p>
           </div>
           <div class="col-md-offset-2 col-md-5 well">
             <p>Controll all speaker</p>
@@ -105,18 +108,22 @@
         $(document).ready(function() {
             // This command is used to initialize some elements and make them work properly
             $.material.init();
-
+            ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
+            
             // Load some functions to fill the controller
             FillSelectWithZones();
 
             if(localStorage.getItem("Volume-off") === null)
             {
               swal({title: "Welcome!", text: "We think this is the first time you visit this website. We are doing some basic configuration. We should be done when you read this.", confirmButtonText: "Close"});
+
+              CreateDefaultSettings();
             }
         });
 
         function onZoneChange() {
           localStorage.setItem("SelectedZone", $('#SelectZone').find(':selected').text());
+          ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
         }
     </script>
   </body>
