@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/roboto.min.css" rel="stylesheet">
+    <link href="css/material.min.css" rel="stylesheet">
+    <link href="css/ripples.min.css" rel="stylesheet">
+    <link href="css/sweetalert.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style>
+    /* make sure container content is not behind nav */
+    .container {
+      margin-top: 6%;
+    }
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="js/ripples.min.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/sweetalert.min.js"></script>
+    <script src="js/custom.js"></script>
+
+  </head>
+  <body>
+    <!-- Start NAVBAR -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Sonos Web Controller</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a onclick="ResumeAllSpeakers()"><i class="fa fa-play"></i></a></li>
+              <li><a onclick="PauseAllSpeakers()"><i class="fa fa-pause"></i></a></li>
+              <li><a onclick="MuteAllSpeakers()"><i class="fa fa-volume-off"></i></a></li>
+              <li><a onclick="DecreaseVolumeAllSpeakers()"><i class="fa fa-volume-down"></i></a></li>
+              <li><a onclick="IncreaseVolumeAllSpeakers()"><i class="fa fa-volume-up"></i></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="settings.html"><i class="fa fa-cogs"></i></a></li>
+              <li><a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle"></i></a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 well">
+            <p>Control a single speaker</p>
+
+            <form action="#" class="form-horizontal">
+              <select id="SelectZone" onchange="onZoneChange()" class="form-control">
+              </select>
+
+              <button onclick="PauseSpecificSpeaker()" class="btn btn-info btn-lg pull-left"><i class="fa fa-pause"></i></button>
+              <button onclick="PlaySpecificSpeaker()" class="btn btn-info btn-lg pull-left"><i class="fa fa-play"></i></button>
+              <button onclick="IncreaseVolumeSpecificSpeaker()" class="btn btn-info btn-lg pull-right"><i class="fa fa-volume-up"></i></button>
+              <button onclick="DecreaseVolumeSpecificSpeaker()" class="btn btn-info btn-lg pull-right"><i class="fa fa-volume-down"></i></button>
+              <button onclick="MuteSpecificSpeaker()" class="btn btn-info btn-lg pull-right"><i class="fa fa-volume-off"></i></button>
+          </div>
+          <div class="col-md-offset-2 col-md-5 well">
+            <p>Controll all speaker</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- end NAVBAR -->
+
+    <!-- InfoModal -->
+    <div class="modal fade" id="infoModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title">About Sonos Web Controller</h4>
+            </div>
+            <div class="modal-body">
+                <p>This tool lets you control your sonos installation from your webbrowser with a nice and easy interface.</p>
+                <p>If you have any feedback about this, please send me an <a href="mailto:juleskreutzer@me.com?SUBJECT=Sonos%20Web%20Controller%20Feedback">email</a> so I can try to improve the controller</p>
+
+                <hr>
+                <h3>Important info</h3>
+                <ul>
+                  <li>The Sonos Web Controller needs <a href="http://nodejs.org" target="_blank">NodeJS</a> to run</li>
+                  <li>The Sonos Web Controller can only be used on the same network that sonos is installed</li>
+            </div>
+            <div class="modal-footer">
+                <h6 class="pull-left">The Sonos Web Controller is build on the node-sonos-http-api <a href="https://github.com/jishi/node-sonos-http-api" target="_blank"><i class="fa fa-github"></i></a>.</h6>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script>
+        $(document).ready(function() {
+            // This command is used to initialize some elements and make them work properly
+            $.material.init();
+
+            // Load some functions to fill the controller
+            FillSelectWithZones();
+
+            swal({title: '', text: '<i class="fa fa-spinner fa-pulse fa-5x"></i>', timer: 1000, showConfirmButton: false, html: true});
+            if(localStorage.getItem("Volume-off") === null)
+            {
+              swal({title: "Welcome!", text: "We think this is the first time you visit this website. We are doing some basic configuration. We should be done when you read this.", confirmButtonText: "Close"});
+            }
+        });
+
+        function onZoneChange() {
+          localStorage.setItem("SelectedZone", $('#SelectZone').find(':selected').text());
+        }
+    </script>
+  </body>
+</html>
