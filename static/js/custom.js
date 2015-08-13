@@ -109,7 +109,7 @@ function IncreaseVolumeSpecificSpeaker(){
 
 function DecreaseVolumeSpecificSpeaker(){
   jQuery.ajax({
-    url: '/' + localStorage.getItem("SelectedZone") + '/volume' + localStorage.getItem("Volume-decrease")
+    url: '/' + localStorage.getItem("SelectedZone") + '/volume/' + localStorage.getItem("Volume-decrease")
   });
 }
 

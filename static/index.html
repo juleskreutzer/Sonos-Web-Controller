@@ -7,6 +7,7 @@
     <link href="css/ripples.min.css" rel="stylesheet">
     <link href="css/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/nouislider.min.css" rel="stylesheet">
     <style>
     /* make sure container content is not behind nav */
     .container {
@@ -20,6 +21,7 @@
     <script src="js/material.min.js"></script>
     <script src="js/sweetalert.min.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/nouislider.min.js"></script>
 
   </head>
   <body>
@@ -107,7 +109,6 @@
             // Load some functions to fill the controller
             FillSelectWithZones();
 
-            swal({title: '', text: '<i class="fa fa-spinner fa-pulse fa-5x"></i>', timer: 1000, showConfirmButton: false, html: true});
             if(localStorage.getItem("Volume-off") === null)
             {
               swal({title: "Welcome!", text: "We think this is the first time you visit this website. We are doing some basic configuration. We should be done when you read this.", confirmButtonText: "Close"});
