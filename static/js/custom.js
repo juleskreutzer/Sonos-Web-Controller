@@ -124,14 +124,12 @@ function FillSelectWithZones(){
 
 function ShowCurrentPlaying(Zone){
   var obj;
-  console.log(Zone);
   jQuery.ajax({
     url: '/Zones'
   }).done(function(data){
     jQuery.each(data, function(){
       if(this.coordinator.roomName == Zone)
       {
-        console.log(this);
         $("#nowPlaying").empty();
 
         if(this.coordinator.state.zoneState == "PLAYING"){
@@ -141,9 +139,8 @@ function ShowCurrentPlaying(Zone){
         $("#nowPlaying").append(this.coordinator.state.currentTrack.title);
 
         if(this.coordinator.state.currentTrack.type == "radio"){
-          var radioShowMetaData = this.coordinator.state.currentTrack.radioShowMetaData;
-          radioShowMetaData = radioShowMetaData.substring(0, radioShowMetaData.indexOf(","));
-          $("#nowPlaying").append(" - " + radioShowMetaData);
+          var streamInfo = this.coordinator.state.currentTrack.streamInfo;
+          $("#nowPlaying").append(" - " + streamInfo);
         }
       }
     })
