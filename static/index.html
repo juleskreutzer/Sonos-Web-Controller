@@ -8,6 +8,9 @@
     <link href="css/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/nouislider.min.css" rel="stylesheet">
+
+    <!-- refresh page every 4 minutes to get new nowPlaying content -->
+    <meta http-equiv="refresh" content="240">
     <style>
     /* make sure container content is not behind nav */
     .container {
@@ -109,7 +112,7 @@
             // This command is used to initialize some elements and make them work properly
             $.material.init();
             ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
-            
+
             // Load some functions to fill the controller
             FillSelectWithZones();
 
