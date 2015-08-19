@@ -52,12 +52,15 @@ function PauseSpecificSpeaker(){
   jQuery.ajax({
     url: '/' + localStorage.getItem("SelectedZone") + '/pause'
   });
+
+  $("#nowPlaying").empty();
 }
 
 function PlaySpecificSpeaker(){
   jQuery.ajax({
     url: '/' + localStorage.getItem("SelectedZone") + '/play'
   });
+  ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
 }
 
 function IncreaseVolumeSpecificSpeaker(){
