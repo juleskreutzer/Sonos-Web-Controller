@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/juleskreutzer/Sonos-Web-Controller.svg)](https://travis-ci.org/juleskreutzer/Sonos-Web-Controller)
 # Sonos Web Controller
 ---
 ##### What you will find in this readme
