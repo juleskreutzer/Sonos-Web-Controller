@@ -2,8 +2,8 @@
 # Sonos Web Controller
 ---
 ##### What you will find in this readme
-- [Requirements](#Requirements)
-- [Installation](#Installation)
+- [Requirements](#requirements)
+- [Installation](#installation)
 - [Starting the Application](#Starting-the-application)
 
 ---
