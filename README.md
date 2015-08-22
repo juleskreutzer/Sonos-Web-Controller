@@ -29,4 +29,11 @@ Download the files needed for Sonos Web Controller by clicking the "Download ZIP
 
 The above steps shouldn't be to difficult to achieve. When you're done with the above steps you can proceed to the next steps.
 
-# Oops.. The rest of the file hasn't been finished yet.
+ - Open your Terminal/Command Prompt
+ - navigate to the map where you saved the files[1]
+ - type ```node server.js``` and press the return button
+
+[1] You could do this with the following command: ```cd path/to/your/files```
+
+If you receive no errors in the output of the terminal/command prompt window, the application is running. You could test this by navigating to ```http://localhost:5005``` or click [here](http://localhost:5005).
+
