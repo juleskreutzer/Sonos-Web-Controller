@@ -4,7 +4,7 @@
 ##### What you will find in this readme
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Starting the Application](#Starting-the-application)
+- [Starting the Application](#starting-the-application)
 
 ---
 
