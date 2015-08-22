@@ -2,8 +2,9 @@
 # Sonos Web Controller
 ---
 ##### What you will find in this readme
-- Requirements
-- Installation
+- [Requirements](#Requirements)
+- [Installation](#Installation)
+- [Starting the Application](#Starting-the-application)
 
 ---
 
@@ -36,4 +37,15 @@ The above steps shouldn't be to difficult to achieve. When you're done with the 
 [1] You could do this with the following command: ```cd path/to/your/files```
 
 If you receive no errors in the output of the terminal/command prompt window, the application is running. You could test this by navigating to ```http://localhost:5005``` or click [here](http://localhost:5005).
+
+##### Starting the Application
+
+You have to follow the installation steps only once. When the application is installed, you can start it with the following commands:
+
+ - ``` cd path/to/your/files``` 
+ - ``` node server.js```
+
+###### Keep your terminal/command prompt windows open in the background, otherwise the application will stop working
+
+
 
