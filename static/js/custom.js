@@ -24,11 +24,11 @@ function MuteAllSpeakers() {
 
 function DecreaseVolumeAllSpeakers() {
   var zones = JSON.parse(localStorage.getItem("Zones"));
-  var decrease = localStorage.getItem("Volume-decrease");
   var i = 0;
   jQuery.each(zones, function() {
+
     jQuery.ajax({
-      url: '/' + zones[i] + '/Volume/' + decrease
+      url: '/' + zones[i] + '/Volume/' + localStorage.getItem("Volume-decrease")
     });
     i = i + 1;
   });
@@ -36,11 +36,10 @@ function DecreaseVolumeAllSpeakers() {
 
 function IncreaseVolumeAllSpeakers() {
   var zones = JSON.parse(localStorage.getItem("Zones"));
-  var increase = localStorage.getItem("Volume-increase");
   var i = 0;
   jQuery.each(zones, function() {
     jQuery.ajax({
-      url: '/' + zones[i] + '/Volume' + increase
+      url: '/' + zones[i] + '/Volume/' + localStorage.getItem("Volume-increase")
     });
     i = i + 1;
   });
