@@ -82,6 +82,45 @@ function MuteSpecificSpeaker(){
 // END Functions for Specific Speakers
 
 // Other Functions
+function LoadSettings(){
+  $("#default-volume").val(localStorage.getItem("Default-volume"));
+  $("#volume-decrease").val(localStorage.getItem("Volume-decrease"));
+  $("#volume-off").val(localStorage.getItem("Volume-off"));
+  $("#selectedZone").val(localStorage.getItem("SelectedZone"));
+
+  // We need to do some extra because the volume-increase in the local storage has a "+" in the beginning
+  var increase = localStorage.getItem("Volume-increase");
+  var res = increase.replace('+', '');
+  $("#volume-increase").val(res);
+  /*
+  var speakers = localStorage.getItem("Zones"); <-- this gives an error
+  jQuery.each(speakers, function(value) {
+       $("#zones").append(this);
+   });
+   */
+   $.ajax({
+     url: "/Zones"
+   }).done(function(data){
+     var ZonesArray = "["
+     jQuery.each(data, function(){
+       $("#zones").append(this.coordinator.roomName + '\n');
+     })
+   });
+
+}
+
+function clearSettings() {
+  localStorage.clear();
+  location.reload();
+}
+
+function updateSettings() {
+  swal({title: '',type: 'success', showConfirmButton: false, timer: 1100});
+
+  localStorage.setItem("Volume-decrease", $("#volume-decrease").val());
+  localStorage.setItem("Volume-increase", "+" + $("#volume-increase").val());
+  localStorage.setItem("Default-volume", $("#default-volume").val());
+}
 function CreateDefaultSettings() {
   // +_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+_+
   // DO NOT CHANGE THESE SETTING WHEN YOU DON'T KNOW WHAT YOU ARE DOING !!
@@ -99,7 +138,6 @@ function CreateDefaultSettings() {
   $.ajax({
     url: "/Zones"
   }).done(function(data){
-    console.log(data);
     var ZonesArray = "["
     jQuery.each(data, function(){
       ZonesArray = ZonesArray + "\"" + this.coordinator.roomName + "\",";

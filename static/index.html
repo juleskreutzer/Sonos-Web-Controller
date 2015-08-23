@@ -49,12 +49,13 @@
               <li><a onclick="IncreaseVolumeAllSpeakers()"><i class="fa fa-volume-up"></i></a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="settings.html"><i class="fa fa-cogs"></i></a></li>
+              <li><a data-toggle="modal" data-target="#settingsModal"><i class="fa fa-cogs"></i></a></li>
               <li><a data-toggle="modal" data-target="#infoModal"><i class="fa fa-info-circle"></i></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+
       <div class="container">
         <div class="row">
           <div class="col-md-5 well">
@@ -86,8 +87,55 @@
         </div>
       </div>
 
-    <!-- end NAVBAR -->
-
+    <!-- SettingsModal -->
+    <div class="modal fade" id="settingsModal">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title">Sonos Web Controller Settings</h4>
+              </div>
+              <div class="modal-body">
+                <form action="#" class="form-horizontal">
+                  <div class="form-group">
+                    <label for="default-volume" class="col-md-4 control-label">Default volume</label>
+                    <div class="col-md-8">
+                      <input type="number" class="form-control" id="default-volume" name="default-volume">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="volume-increase" class="col-md-4 control-label">Volume increase</label>
+                    <div class="col-md-8">
+                      <input type="number" class="form-control" id="volume-increase" name="volume-increase">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="volume-decrease" class="col-md-4 control-label">Volume decrease</label>
+                    <div class="col-md-8">
+                      <input type="number" class="form-control" id="volume-decrease" name="volume-decrease">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="zones" class="col-md-4 control-label">These are the speakers that we found</label>
+                    <div class="col-md-8">
+                      <textarea class="form-control" disabled name="zones" id="zones"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="selectedZone" class="col-md-4 control-label">Active Speaker</label>
+                    <div class="col-md-8">
+                      <input type="text" class="form-control" id="selectedZone" name="selectedZone" disabled>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" onclick="clearSettings()">Restore default settings</button>
+                <button type="button" class="btn btn-success" onclick="updateSettings()" data-dismiss="modal">Save current settings</button>
+              </div>
+          </div>
+      </div>
+    </div>
     <!-- InfoModal -->
     <div class="modal fade" id="infoModal">
     <div class="modal-dialog">
@@ -118,17 +166,23 @@
         $(document).ready(function() {
             // This command is used to initialize some elements and make them work properly
             $.material.init();
-            ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
 
             // Load some functions to fill the controller
-            FillSelectWithZones();
-
             if(localStorage.getItem("Volume-off") === null)
             {
-              swal({title: "Welcome!", text: "We think this is the first time you visit this website. We are doing some basic configuration. We should be done when you read this.", confirmButtonText: "Close"});
+              swal({title: "Welcome!", text: "We think this is the first time you visit this website. We are doing some basic configuration. We should be done when you read this.", confirmButtonText: "Close"}, function(isConfirm){
+                if(isConfirm){
+                location.reload();
+                }
+              });
 
               CreateDefaultSettings();
+
             }
+            ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
+            FillSelectWithZones();
+            LoadSettings();
+
         });
 
         function onZoneChange() {
