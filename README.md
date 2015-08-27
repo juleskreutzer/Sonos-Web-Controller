@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/juleskreutzer/Sonos-Web-Controller.svg)](https://travis-ci.org/juleskreutzer/Sonos-Web-Controller)
-[![Dependency Status](https://david-dm.org/juleskreutzer/sonos-web-controller.svg)](https://david-dm.org/juleskreutzer/sonos-web-controller.svg)
+[![Dependency Status](https://david-dm.org/juleskreutzer/sonos-web-controller.svg)](https://david-dm.org/juleskreutzer/Sonos-Web-Controller)
 
 # Sonos Web Controller
 ---
