@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/juleskreutzer/Sonos-Web-Controller.svg)](https://travis-ci.org/juleskreutzer/Sonos-Web-Controller)
+[![Dependency Status](https://david-dm.org/juleskreutzer/sonos-web-controller.svg)](https://david-dm.org/juleskreutzer/sonos-web-controller.svg)
+
 # Sonos Web Controller
 ---
 ##### What you will find in this readme
