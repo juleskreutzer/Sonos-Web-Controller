@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 515.9 728.5" enable-background="new 0 0 515.9 728.5" xml:space="preserve">
+<rect x="0" y="106.3" fill="none" width="515.9" height="515.9"/>
+<rect x="77.4" y="183.7" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.0s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="206.4" y="132.1" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.125s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="335.3" y="183.7" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.25s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="25.8" y="312.7" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.875s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="386.9" y="312.7" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.375" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="77.4" y="441.6" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.75s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="206.4" y="493.2" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.625s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+<rect x="335.3" y="441.6" fill="#047AB3" width="103.2" height="103.2">
+<animate  fill="remove" repeatCount="indefinite" additive="replace" accumulate="none" dur="1s" restart="always" values="#00cde8;#00cde8;#047ab3;#047ab3" calcMode="linear" keyTimes="0;0.1;0.2;1" begin="0.5s" attributeName="fill" from="#047ab3" to="#00cde8">
+	</animate>
+</rect>
+</svg>

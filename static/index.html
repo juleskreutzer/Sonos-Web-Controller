@@ -85,6 +85,11 @@
             </form>
           </div>
         </div>
+        <div class="row">
+          <div class="col-lg-12 well">
+            <img style="margin-left: 48%; margin-right: 48%" src="loader.svg" width="2%" height="2%">
+          </div>
+        </div>
       </div>
 
     <!-- SettingsModal -->
@@ -184,7 +189,6 @@
             LoadSettings();
 
         });
-
         function onZoneChange() {
           localStorage.setItem("SelectedZone", $('#SelectZone').find(':selected').text());
           ShowCurrentPlaying(localStorage.getItem("SelectedZone"));
